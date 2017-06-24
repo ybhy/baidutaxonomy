@@ -1,0 +1,17 @@
+G:\C#\baidutaxonomy\baidutaxonomy\bin\Debug\baidutaxonomy.exe.config
+G:\C#\baidutaxonomy\baidutaxonomy\obj\Debug\baidutaxonomy.csprojResolveAssemblyReference.cache
+G:\C#\baidutaxonomy\baidutaxonomy\obj\Debug\baidutaxonomy.Form1.resources
+G:\C#\baidutaxonomy\baidutaxonomy\obj\Debug\baidutaxonomy.Properties.Resources.resources
+G:\C#\baidutaxonomy\baidutaxonomy\obj\Debug\baidutaxonomy.csproj.GenerateResource.Cache
+G:\C#\baidutaxonomy\baidutaxonomy\bin\Debug\baidutaxonomy.exe
+G:\C#\baidutaxonomy\baidutaxonomy\bin\Debug\baidutaxonomy.pdb
+G:\C#\baidutaxonomy\baidutaxonomy\obj\Debug\baidutaxonomy.exe
+G:\C#\baidutaxonomy\baidutaxonomy\obj\Debug\baidutaxonomy.pdb
+G:\C#\baidutaxonomy\baidutaxonomy\bin\Debug\EntityFramework.dll
+G:\C#\baidutaxonomy\baidutaxonomy\bin\Debug\EntityFramework.SqlServer.dll
+G:\C#\baidutaxonomy\baidutaxonomy\bin\Debug\EntityFramework.xml
+G:\C#\baidutaxonomy\baidutaxonomy\bin\Debug\EntityFramework.SqlServer.xml
+G:\C#\baidutaxonomy\baidutaxonomy\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\C#\baidutaxonomy\concept\baidutaxonomy\bin\Debug\baidutaxonomy.exe.config
+G:\C#\baidutaxonomy\concept\baidutaxonomy\obj\Debug\baidutaxonomy.exe
+G:\C#\baidutaxonomy\concept\baidutaxonomy\obj\Debug\baidutaxonomy.pdb

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaidudataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Concept">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstconcept" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="secondconcept" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="thirdconcept" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="concepturl" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Instance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="conceptid" Type="Int32" />
+    <Property Name="instance1" Type="String" MaxLength="225" FixedLength="true" Unicode="true" />
+    <Property Name="instanceurl" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BaidudataEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Concept" EntityType="Self.Concept" />
+    <EntitySet Name="Instance" EntityType="Self.Instance" />
+  </EntityContainer>
+</Schema>

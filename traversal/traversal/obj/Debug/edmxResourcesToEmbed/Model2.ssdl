@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaidudataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Concept">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstconcept" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="secondconcept" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="thirdconcept" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="concepturl" Type="nvarchar" MaxLength="225" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Entity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conceptid" Type="int" Nullable="false" />
+    <Property Name="instance" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="instanceurl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="polysemy" Type="int" Nullable="false" />
+    <Property Name="title" Type="nchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Instance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conceptid" Type="int" Nullable="false" />
+    <Property Name="instance" Type="nchar" MaxLength="225" Nullable="false" />
+    <Property Name="instanceurl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="polysemy" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“Baidudata.dbo.Relation”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="Relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="entitya" Type="nvarchar" MaxLength="500" />
+    <Property Name="urla" Type="nvarchar" MaxLength="500" />
+    <Property Name="entityb" Type="nvarchar" MaxLength="500" />
+    <Property Name="urlb" Type="nvarchar" MaxLength="500" />
+    <Property Name="link" Type="int" />
+  </EntityType>
+  <EntityContainer Name="BaidudataModelStoreContainer">
+    <EntitySet Name="Concept" EntityType="Self.Concept" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entity" EntityType="Self.Entity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Instance" EntityType="Self.Instance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relation" EntityType="Self.Relation" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Relation].[id] AS [id], 
+    [Relation].[entitya] AS [entitya], 
+    [Relation].[urla] AS [urla], 
+    [Relation].[entityb] AS [entityb], 
+    [Relation].[urlb] AS [urlb], 
+    [Relation].[link] AS [link]
+    FROM [dbo].[Relation] AS [Relation]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

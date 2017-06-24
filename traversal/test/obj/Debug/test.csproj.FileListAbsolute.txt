@@ -1,0 +1,10 @@
+G:\C#\baidutaxonomy\traversal\test\bin\Debug\test.exe.config
+G:\C#\baidutaxonomy\traversal\test\bin\Debug\test.exe
+G:\C#\baidutaxonomy\traversal\test\bin\Debug\test.pdb
+G:\C#\baidutaxonomy\traversal\test\obj\Debug\test.Properties.Resources.resources
+G:\C#\baidutaxonomy\traversal\test\obj\Debug\test.csproj.GenerateResource.Cache
+G:\C#\baidutaxonomy\traversal\test\obj\Debug\test.exe
+G:\C#\baidutaxonomy\traversal\test\obj\Debug\test.pdb
+G:\C#\baidutaxonomy\traversal\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+G:\C#\baidutaxonomy\traversal\test\bin\Debug\MySql.Data.dll
+G:\C#\baidutaxonomy\traversal\test\obj\Debug\test.Form1.resources

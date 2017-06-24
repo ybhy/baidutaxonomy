@@ -1,0 +1,15 @@
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\traversal.exe.config
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\traversal.exe
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\traversal.pdb
+G:\C#\baidutaxonomy\traversal\traversal\obj\Debug\traversal.csprojResolveAssemblyReference.cache
+G:\C#\baidutaxonomy\traversal\traversal\obj\Debug\traversal.Form1.resources
+G:\C#\baidutaxonomy\traversal\traversal\obj\Debug\traversal.Properties.Resources.resources
+G:\C#\baidutaxonomy\traversal\traversal\obj\Debug\traversal.csproj.GenerateResource.Cache
+G:\C#\baidutaxonomy\traversal\traversal\obj\Debug\traversal.exe
+G:\C#\baidutaxonomy\traversal\traversal\obj\Debug\traversal.pdb
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\EntityFramework.dll
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\EntityFramework.SqlServer.dll
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\EntityFramework.xml
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\EntityFramework.SqlServer.xml
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\C#\baidutaxonomy\traversal\traversal\bin\Debug\MySql.Data.dll

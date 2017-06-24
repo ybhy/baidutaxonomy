@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BaidudataModelStoreContainer" CdmEntityContainer="BaidudataEntities3">
+    <EntitySetMapping Name="Concept">
+      <EntityTypeMapping TypeName="BaidudataModel.Concept">
+        <MappingFragment StoreEntitySet="Concept">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firstconcept" ColumnName="firstconcept" />
+          <ScalarProperty Name="secondconcept" ColumnName="secondconcept" />
+          <ScalarProperty Name="thirdconcept" ColumnName="thirdconcept" />
+          <ScalarProperty Name="concepturl" ColumnName="concepturl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instance">
+      <EntityTypeMapping TypeName="BaidudataModel.Instance">
+        <MappingFragment StoreEntitySet="Instance">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="conceptid" ColumnName="conceptid" />
+          <ScalarProperty Name="instance1" ColumnName="instance" />
+          <ScalarProperty Name="instanceurl" ColumnName="instanceurl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,6 @@
+G:\C#\baidutaxonomy\testSet\testSet\bin\Debug\testSet.exe.config
+G:\C#\baidutaxonomy\testSet\testSet\bin\Debug\testSet.exe
+G:\C#\baidutaxonomy\testSet\testSet\bin\Debug\testSet.pdb
+G:\C#\baidutaxonomy\testSet\testSet\obj\Debug\testSet.csprojResolveAssemblyReference.cache
+G:\C#\baidutaxonomy\testSet\testSet\obj\Debug\testSet.exe
+G:\C#\baidutaxonomy\testSet\testSet\obj\Debug\testSet.pdb

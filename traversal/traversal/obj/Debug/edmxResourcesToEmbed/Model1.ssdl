@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaidudataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="All">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstconcept" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="secondconcept" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="thirdconcept" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="concepturl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="conceptid" Type="int" Nullable="false" />
+    <Property Name="instance" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="instanceurl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Concept">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstconcept" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="secondconcept" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="thirdconcept" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="concepturl" Type="nvarchar" MaxLength="225" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Distinct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conceptid" Type="int" Nullable="false" />
+    <Property Name="instance" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="instanceurl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="title" Type="nchar" MaxLength="150" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Distinct_copy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conceptid" Type="int" Nullable="false" />
+    <Property Name="instance" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="instanceurl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="title" Type="nchar" MaxLength="150" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Entity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conceptid" Type="int" Nullable="false" />
+    <Property Name="instance" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="instanceurl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="polysemy" Type="int" Nullable="false" />
+    <Property Name="title" Type="nchar" MaxLength="150" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“Baidudata.dbo.Entity_copy”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="Entity_copy">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="conceptid" />
+      <PropertyRef Name="instance" />
+      <PropertyRef Name="instanceurl" />
+      <PropertyRef Name="polysemy" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conceptid" Type="int" Nullable="false" />
+    <Property Name="instance" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="instanceurl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="polysemy" Type="int" Nullable="false" />
+    <Property Name="title" Type="nchar" MaxLength="150" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Instance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conceptid" Type="int" Nullable="false" />
+    <Property Name="instance" Type="nchar" MaxLength="225" Nullable="false" />
+    <Property Name="instanceurl" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="polysemy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="entitya" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="urla" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="entityb" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="urlb" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="link" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Relation2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="entitya" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="urla" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="entityb" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="urlb" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="link" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Relation3">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="entitya" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="urla" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="entityb" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="urlb" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="link" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Relation4">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="entitya" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="urla" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="entityb" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="urlb" Type="nvarchar" MaxLength="225" Nullable="false" />
+    <Property Name="link" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BaidudataModelStoreContainer">
+    <EntitySet Name="All" EntityType="Self.All" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Concept" EntityType="Self.Concept" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distinct" EntityType="Self.Distinct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distinct_copy" EntityType="Self.Distinct_copy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entity" EntityType="Self.Entity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Instance" EntityType="Self.Instance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relation" EntityType="Self.Relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relation2" EntityType="Self.Relation2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relation3" EntityType="Self.Relation3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relation4" EntityType="Self.Relation4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entity_copy" EntityType="Self.Entity_copy" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Entity_copy].[id] AS [id], 
+    [Entity_copy].[conceptid] AS [conceptid], 
+    [Entity_copy].[instance] AS [instance], 
+    [Entity_copy].[instanceurl] AS [instanceurl], 
+    [Entity_copy].[polysemy] AS [polysemy], 
+    [Entity_copy].[title] AS [title], 
+    [Entity_copy].[status] AS [status]
+    FROM [dbo].[Entity_copy] AS [Entity_copy]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

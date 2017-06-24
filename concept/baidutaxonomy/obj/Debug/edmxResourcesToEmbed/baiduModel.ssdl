@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaidudataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“Baidudata.dbo.Concept”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="Concept">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstconcept" Type="nchar" MaxLength="10" />
+    <Property Name="secondconcept" Type="nchar" MaxLength="10" />
+    <Property Name="url" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="BaidudataModelStoreContainer">
+    <EntitySet Name="Concept" EntityType="Self.Concept" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Concept].[id] AS [id], 
+    [Concept].[firstconcept] AS [firstconcept], 
+    [Concept].[secondconcept] AS [secondconcept], 
+    [Concept].[url] AS [url]
+    FROM [dbo].[Concept] AS [Concept]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

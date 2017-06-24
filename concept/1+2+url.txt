@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Threading;
+
+namespace baidutaxonomy
+{
+    public partial class Form1 : Form
+    {
+        public string urlhead = "http://baike.baidu.com";
+
+        public Form1()
+        {
+            InitializeComponent();
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Navigate("http://baike.baidu.com/class/1408.html");
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            timer1.Stop();
+        }
+
+        private void timer1_Start(object sender, EventArgs e)
+        {
+            foreach (HtmlElement ahref in this.webBrowser1.Document.GetElementsByTagName("A"))
+            {
+                Console.WriteLine(ahref.InnerText);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string firstconcept = "";
+            string secondconcept = "";
+            foreach (HtmlElement div in this.webBrowser1.Document.GetElementsByTagName("div"))
+            {
+                if (div.GetAttribute("id").Equals("content"))
+                {
+                    foreach (HtmlElement div1 in div.GetElementsByTagName("div"))
+                    {
+                        if (div1.GetAttribute("className").Equals("dirtit"))
+                        {
+                            firstconcept = div1.InnerText;
+                            Console.WriteLine("firstconcept: " + firstconcept);
+                        }
+                    }
+                    foreach (HtmlElement td in this.webBrowser1.Document.GetElementsByTagName("td"))
+                    {
+                        if (td.GetAttribute("className").Equals("f14"))
+                        {
+                            foreach (HtmlElement a in td.GetElementsByTagName("a"))
+                            {
+                                if (a.GetAttribute("target").Equals("_blank"))
+                                {
+
+                                    string url = "http://baike.baidu.com" + a.GetAttribute("href");
+                                    Console.WriteLine(a.GetAttribute("href"));
+                                    secondconcept = a.InnerText;
+                                    Console.WriteLine("secondconcept: " + secondconcept);
+
+                                    this.webBrowser2.Navigate(url);
+                                    Extraction(this.webBrowser2.Document);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            this.timer1.Start();
+        }
+
+        private void Extraction(HtmlDocument document)
+        {
+                
+         }
+
+        private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+    }
+}

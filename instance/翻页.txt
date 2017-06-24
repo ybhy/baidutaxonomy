@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Threading;
+
+namespace instance
+{
+    public partial class Form1 : Form
+    {
+        public int count = 0;
+        public string url = "http://baike.baidu.com/taglist?tag=%BF%C6%D1%A7%BC%D2";
+        public int index = 0;
+        public Form1()
+        {
+            InitializeComponent();
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Navigate(url);
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            timer1.Stop();
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void extract()
+        {
+            string instance = "";
+            string instanceurl = "";
+            foreach (HtmlElement td in this.webBrowser1.Document.GetElementsByTagName("td"))
+            {
+                if (td.GetAttribute("className").Equals("f"))
+                {
+                    foreach (HtmlElement font in td.GetElementsByTagName("font"))
+                    {
+                        if (font.GetAttribute("size").Equals("3"))
+                        {
+                            instance = font.InnerText;
+                            Console.WriteLine("instance: " + instance);
+                            foreach (HtmlElement a in font.GetElementsByTagName("a"))
+                            {
+                                instanceurl = a.GetAttribute("href");
+                                Console.WriteLine("instanceurl: " + instanceurl);
+                            }
+                        }
+                    }
+                }
+            }
+            index += 10;
+            string urltemp = url + "&offset=" + index;
+            Console.WriteLine(urltemp);
+            this.webBrowser1.Navigate(urltemp);
+            this.timer1.Start();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (HtmlElement a in this.webBrowser1.Document.GetElementsByTagName("A"))
+            {
+                if (a.InnerText != null && a.InnerText.Contains("[尾页]"))
+                {
+                    string href = a.GetAttribute("href");
+                    string indexstring = "offset=";
+                    count = Convert.ToInt32(href.Substring(href.IndexOf(indexstring, 0) + indexstring.Length));
+                    Console.WriteLine(count);
+                }
+            }
+            timer1.Start();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            extract();
+        }
+    }
+}

@@ -1,0 +1,14 @@
+G:\C#\baidutaxonomy\instance\instance\bin\Debug\instance.exe.config
+G:\C#\baidutaxonomy\instance\instance\bin\Debug\instance.exe
+G:\C#\baidutaxonomy\instance\instance\bin\Debug\instance.pdb
+G:\C#\baidutaxonomy\instance\instance\obj\Debug\instance.csprojResolveAssemblyReference.cache
+G:\C#\baidutaxonomy\instance\instance\obj\Debug\instance.Form1.resources
+G:\C#\baidutaxonomy\instance\instance\obj\Debug\instance.Properties.Resources.resources
+G:\C#\baidutaxonomy\instance\instance\obj\Debug\instance.csproj.GenerateResource.Cache
+G:\C#\baidutaxonomy\instance\instance\obj\Debug\instance.exe
+G:\C#\baidutaxonomy\instance\instance\obj\Debug\instance.pdb
+G:\C#\baidutaxonomy\instance\instance\bin\Debug\EntityFramework.dll
+G:\C#\baidutaxonomy\instance\instance\bin\Debug\EntityFramework.SqlServer.dll
+G:\C#\baidutaxonomy\instance\instance\bin\Debug\EntityFramework.xml
+G:\C#\baidutaxonomy\instance\instance\bin\Debug\EntityFramework.SqlServer.xml
+G:\C#\baidutaxonomy\instance\instance\bin\Debug\zh-Hans\EntityFramework.resources.dll
